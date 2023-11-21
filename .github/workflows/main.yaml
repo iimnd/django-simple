@@ -1,0 +1,29 @@
+name: CI/CD
+
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  env:
+    name: Environment
+    uses: iimnd/reusable-workflow/.github/workflows/environment.yaml@main
+  
+  lint:
+    name: Lint and testing
+    needs: [env]
+    uses: iimnd/reusable-workflow/.github/workflows/django-test.yaml@main
+    with:
+      environment: ${{ needs.env.outputs.environment }}
+      enable-lint: true
+      enable-test: false
+      python-version: 3.8
+
+
+
