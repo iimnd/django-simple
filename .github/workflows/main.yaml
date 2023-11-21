@@ -24,6 +24,8 @@ jobs:
       enable-lint: true
       enable-test: false
       python-version: 3.8
+      app-source: project/
+      settings-file: project/project/settings.py
 
 
 
