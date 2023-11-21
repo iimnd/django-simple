@@ -27,5 +27,7 @@ jobs:
       app-source: project/
       settings-file: project/project/settings.py
 
+      
+
 
 
