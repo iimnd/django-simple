@@ -22,8 +22,10 @@ jobs:
     with:
       environment: ${{ needs.env.outputs.environment }}
       enable-lint: true
-      enable-test: false
+      enable-test: true
       python-version: 3.8
+      django-settings-module: project.settings
+      project-dir: ./project
 
 
 
